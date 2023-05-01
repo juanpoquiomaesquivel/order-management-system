@@ -1,0 +1,67 @@
+<form class="row needs-validation py-2" style="background-color: rgba(76, 240, 177, 0.664);">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 mb-3">
+                <label for="nombresCt" class="form-label">Nombres</label>
+                <input type="text" class="form-control" id="nombresCt" required />
+            </div>
+            <div class="col-sm-12 col-md-6 mb-3">
+                <label for="apellidosCt" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="apellidosCt" required />
+            </div>
+            <div class="col-sm-12 col-md-12 mb-3">
+                <label for="direccionCt" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccionCt" />
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-5 mb-3">
+                <label for="contactoCt" class="form-label">Contacto</label>
+                <input type="number" class="form-control" id="contactoCt" />
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3 mb-3">
+                <label class="form-label">¿Whatsapp?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="whatsappCt">
+                    <label class="form-check-label" for="whatsappCt">
+                        Sí.
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3 mb-3">
+                <label class="form-label">¿Telegram?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="telegramCt">
+                    <label class="form-check-label" for="telegramCt">
+                        Sí.
+                    </label>
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <h3>LISTA DE FUENTES</h3>
+                <mat-dialog-actions>
+                    <button mat-raised-button color="primary" (click)="openDialog()">¡Añadir!</button>
+                </mat-dialog-actions>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="adelantoCt" class="form-label">Deuda (S/.)</label>
+                <input type="number" class="form-control" id="adelantoCt" readonly />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="adelantoCt" class="form-label">A cuenta (S/.)</label>
+                <input type="number" class="form-control" id="adelantoCt" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="horaEntregaCt" class="form-label">Entrega</label>
+                <input type="time" class="form-control" id="horaEntregaCt" />
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
+                <label for="observacionesCt" class="form-label">Observaciones</label>
+                <textarea class="form-control" id="observacionesCt"></textarea>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <button class="btn btn-primary form-control" type="submit">!Registrar!</button>
+            </div>
+        </div>
+    </div>
+</form>

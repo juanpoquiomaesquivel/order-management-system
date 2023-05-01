@@ -1,0 +1,29 @@
+<button mat-icon-button style="float: right; margin: 3px;" matDialogClose>
+    <mat-icon>close</mat-icon>
+</button>
+<mat-dialog-content>
+    <div class="row">
+        <div class="col-md-3 mb-3">
+            <label for="pesoFt" class="form-label">Peso (Kg)</label>
+            <input type="number" class="form-control" id="pesoFt" readonly />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="precioFt" class="form-label">Precio x Kg (S/.)</label>
+            <select class="form-select">
+                <option value="">Chancho (S/. 3.00)</option>
+            </select>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="precioFt" class="form-label">Costo (S/.)</label>
+            <input type="number" class="form-control" id="precioFt" readonly />
+        </div>
+        <div>
+            <label for="descripcionFt" class="form-label">Descripción</label>
+            <textarea class="form-control" id="descripcionFt"></textarea>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button color="primary">Save</button>
+    <button mat-raised-button color="warn" matDialogClose>Cancel</button>
+</mat-dialog-actions>
