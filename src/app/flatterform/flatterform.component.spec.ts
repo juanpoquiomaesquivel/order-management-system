@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FuenteComponent } from './fuente.component';
+import { FlatterFormComponent } from './flatterform.component';
 
-describe('FuenteComponent', () => {
-  let component: FuenteComponent;
-  let fixture: ComponentFixture<FuenteComponent>;
+describe('FlatterFormComponent', () => {
+  let component: FlatterFormComponent;
+  let fixture: ComponentFixture<FlatterFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FuenteComponent ]
+      declarations: [ FlatterFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FuenteComponent);
+    fixture = TestBed.createComponent(FlatterFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

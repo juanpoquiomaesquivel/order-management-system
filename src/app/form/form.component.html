@@ -1,67 +1,113 @@
-<form class="row needs-validation py-2" style="background-color: rgba(76, 240, 177, 0.664);">
-    <div class="col-md-12">
-        <div class="row">
+<div class="container" style="background-color: rgb(130, 240, 210);">
+    <form>
+        <div class="row" style="margin: 0 -5px 0 -5px;">
+            <h4 class="my-3 text-center">
+                <strong style="font-family: 'Kanit'; font-size: 20px;">INFORMACIÓN PERSONAL</strong>
+            </h4>
             <div class="col-sm-12 col-md-6 mb-3">
-                <label for="nombresCt" class="form-label">Nombres</label>
-                <input type="text" class="form-control" id="nombresCt" required />
+                <label class="form-label" for="nombresCt">
+                    <strong>Nombres</strong>
+                </label>
+                <input type="text" class="form-control rounded-0 form-control-sm" id="nombresCt"
+                    placeholder="Ejm: Juan Heriberto" required />
             </div>
             <div class="col-sm-12 col-md-6 mb-3">
-                <label for="apellidosCt" class="form-label">Apellidos</label>
-                <input type="text" class="form-control" id="apellidosCt" required />
+                <label class="form-label" for="apellidosCt">
+                    <strong>Apellidos</strong>
+                </label>
+                <input type="text" class="form-control rounded-0 form-control-sm" id="apellidosCt"
+                    placeholder="Ejm: Poquioma Esquivel" />
             </div>
             <div class="col-sm-12 col-md-12 mb-3">
-                <label for="direccionCt" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="direccionCt" />
+                <label class="form-label" for="direccionCt">
+                    <strong>Dirección</strong>
+                </label>
+                <input type="text" class="form-control rounded-0 form-control-sm" id="direccionCt"
+                    placeholder="Ejm: P.J. Raúl Porras Barrenechea Mz. 112 Lt. 15" />
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-5 mb-3">
-                <label for="contactoCt" class="form-label">Contacto</label>
-                <input type="number" class="form-control" id="contactoCt" />
+            <div class="col-sm-4 col-md-4 col-lg-4 mb-3">
+                <label class="form-label" for="contactoCt">
+                    <strong>Contacto</strong>
+                </label>
+                <input type="number" class="form-control rounded-0 form-control-sm" id="contactoCt"
+                    placeholder="Ejm: 902917988" />
             </div>
-            <div class="col-sm-6 col-md-6 col-lg-3 mb-3">
-                <label class="form-label">¿Whatsapp?</label>
+            <div class="col-sm-4 col-md-4 col-lg-4 mb-3">
+                <label><strong>SMS</strong></label>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="whatsappCt">
-                    <label class="form-check-label" for="whatsappCt">
-                        Sí.
-                    </label>
+                    <input class="form-check-input rounded-0" type="checkbox" value="whatsapp" id="whatsappCt">
+                    <label class="form-check-label" for="whatsappCt">Whatsapp</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input rounded-0" type="checkbox" value="telegram" id="telegramCt">
+                    <label class="form-check-label" for="telegramCt">Telegram</label>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6 col-lg-3 mb-3">
-                <label class="form-label">¿Telegram?</label>
+            <div class="col-sm-4 col-md-4 col-lg-4 mb-3">
+                <label><strong>Payment</strong></label>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="telegramCt">
-                    <label class="form-check-label" for="telegramCt">
-                        Sí.
-                    </label>
+                    <input class="form-check-input rounded-0" type="checkbox" value="yape" id="yapeCt">
+                    <label class="form-check-label" for="yapeCt">Yape</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input rounded-0" type="checkbox" value="telegram" id="plinCt">
+                    <label class="form-check-label" for="plinCt">Plin</label>
                 </div>
             </div>
-            <div class="col-12 mb-3">
-                <h3>LISTA DE FUENTES</h3>
-                <mat-dialog-actions>
-                    <button mat-raised-button color="primary" (click)="openDialog()">¡Añadir!</button>
-                </mat-dialog-actions>
+            <hr class="mb-3">
+            <h4 class="mb-3 text-center">
+                <strong style="font-family: 'Kanit'; font-size: 20px;">FUENTES</strong>
+            </h4>
+            <div class="col-12">
+                <div class="row">
+                    <app-flatter class="col-12 mb-2" *ngFor="let flatter of listOfFlatters; let i = index"
+                        [flatterOfList]="flatter" [indexOfList]="i"
+                        (onClikDeleteFlatter)="deleteFlatter($event)"></app-flatter>
+                </div>
+                <div class="row justify-content-center mb-3">
+                    <div class="col-4">
+                        <button class="btn btn-primary rounded-0 btn-sm form-control"
+                            (click)="openDialog()">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mb-3">
+            <h4 class="mb-3 text-center">
+                <strong style="font-family: 'Kanit'; font-size: 20px;">VOUCHER</strong>
+            </h4>
+            <div class="col-md-4 mb-3">
+                <label class="form-label" for="costoCt">
+                    <strong>Costo (S/.)</strong>
+                </label>
+                <input type="number" class="form-control rounded-0 form-control-sm" id="costoCt" placeholder="Ejm: 25"
+                    readonly />
             </div>
             <div class="col-md-4 mb-3">
-                <label for="adelantoCt" class="form-label">Deuda (S/.)</label>
-                <input type="number" class="form-control" id="adelantoCt" readonly />
+                <label for="adelantoCt" class="form-label">
+                    <strong>A cuenta (S/.)</strong>
+                </label>
+                <input type="number" class="form-control rounded-0 form-control-sm" id="adelantoCt"
+                    placeholder="Ejm: 10" />
             </div>
             <div class="col-md-4 mb-3">
-                <label for="adelantoCt" class="form-label">A cuenta (S/.)</label>
-                <input type="number" class="form-control" id="adelantoCt" />
-            </div>
-            <div class="col-md-4 mb-3">
-                <label for="horaEntregaCt" class="form-label">Entrega</label>
-                <input type="time" class="form-control" id="horaEntregaCt" />
+                <label for="horaEntregaCt" class="form-label">
+                    <strong>Entrega</strong>
+                </label>
+                <input type="time" class="form-control rounded-0 form-control-sm" id="horaEntregaCt"
+                    placeholder="13:25" />
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
-                <label for="observacionesCt" class="form-label">Observaciones</label>
-                <textarea class="form-control" id="observacionesCt"></textarea>
+                <label class="form-label" for="observacionesCt">
+                    <strong>Observaciones</strong>
+                </label>
+                <textarea class="form-control rounded-0 form-control-sm" id="observacionesCt" style="max-height: 100px;"
+                    placeholder="Cliente observado."></textarea>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-md-5">
+                    <button class="btn btn-success rounded-0 form-control" type="submit">Registrar</button>
+                </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-5">
-                <button class="btn btn-primary form-control" type="submit">!Registrar!</button>
-            </div>
-        </div>
-    </div>
-</form>
+    </form>
+</div>

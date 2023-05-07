@@ -1,0 +1,32 @@
+<h1 mat-dialog-title class="text-center">Fuente</h1>
+<div mat-dialog-content>
+    <div class="row">
+        <div class="col-3 mb-3">
+            <label for="pesoFt" class="form-label">Peso</label>
+            <input type="number" id="pesoFt" class="form-control" [value]="data?.weight">
+        </div>
+        <div class="col-6 mb-3">
+            <label for="tipoFt" class="form-label">Tipo</label>
+            <select id="tipoFt" class="form-select">
+                <option [value]="option" *ngFor="let option of presas">{{ option }}</option>
+            </select>
+        </div>
+        <div class="col-3 mb-3">
+            <label for="costoFt" class="form-label">Costo (S/.)</label>
+            <input type="number" id="costoFt" class="form-control" [value]="data?.cost" readonly />
+        </div>
+        <div class="col-12">
+            <label for="descripcionFt" class="form-label">Descripción</label>
+            <textarea id="descripcionFt" class="form-control" [value]="data?.description"
+                style="max-height: 100px;"></textarea>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="row justify-content-center">
+    <div class="col-3">
+        <button class="btn btn-success form-control">Guardar</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-danger form-control" mat-dialog-close>Cancelar</button>
+    </div>
+</div>
